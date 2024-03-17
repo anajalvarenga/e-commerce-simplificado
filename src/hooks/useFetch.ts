@@ -3,13 +3,13 @@ import { useState, useEffect } from 'react';
 import { Product } from '../types/product';
 
 interface UseFetchResult {
-    data: Product | Product[] | null;
+    data: Product[] | null;
     isPending: boolean;
     error: any | null;
 }
 
 const useFetch = (url: string): UseFetchResult => {
-    const [data, setData] = useState<Product | Product[] | null>(null);
+    const [data, setData] = useState<Product[] | null>(null);
     const [isPending, setIsPending] = useState<boolean>(true);
     const [error, setError] = useState<any | null>(null);
 

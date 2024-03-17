@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+import { Product } from "../../../types/product";
+import { priceFormatter } from "../../../utils/priceFormatter";
+
 const Container = styled.div`
     max-width: 306.67px;
 
@@ -38,12 +41,12 @@ const Price = styled.b`
     margin: 0;
 `;
 
-const MovieCard = () => {
+const MovieCard = ({ movie }: { movie: Product }) => {
     return (
         <Container>
-            <Image src="https://wefit-react-web-test.s3.amazonaws.com/viuva-negra.png" />
-            <Title>title</Title>
-            <Price>R$ 9,99</Price>
+            <Image src={movie.image} />
+            <Title>{movie.title}</Title>
+            <Price>{priceFormatter(movie.price)}</Price>
         </Container>
     );
 }

@@ -1,14 +1,15 @@
+import MovieList from "./components/MovieList";
 import useFetch from "../../hooks/useFetch";
 
 const Home = () => {
     const { data: products, isPending, error } = useFetch('http://localhost:8000/products');
 
     return (
-        <section>
+        <main>
             {error && <p>{error}</p>}
-            {isPending && <p>Loading users...</p>}
-            {products && <div>Home</div>}
-        </section>
+            {isPending && <p>Loading movies...</p>}
+            {products && <MovieList movieList={products} />}
+        </main>
     );
 }
 
