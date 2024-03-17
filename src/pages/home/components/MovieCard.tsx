@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { Product } from "../../../types/product";
-import { priceFormatter } from "../../../utils/priceFormatter";
+import { priceFormatter } from "../../../utils/price-formatter";
 
 const Container = styled.div`
     max-width: 306.67px;
