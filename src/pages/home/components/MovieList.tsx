@@ -12,7 +12,12 @@ const Grid = styled.section`
 const MovieList = ({ movieList }: { movieList: Product[] }) => {
     return (
         <Grid>
-            {movieList.map(movie => <MovieCard movie={movie} />)}
+            {movieList.map(movie => (
+                <MovieCard
+                    key={movie.id}
+                    movie={movie}
+                />
+            ))}
         </Grid>
     );
 }
