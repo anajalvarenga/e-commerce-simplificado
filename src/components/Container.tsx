@@ -16,12 +16,26 @@ const ContainerStyled = styled.main`
     }
 `;
 
-interface ContainerProps extends HTMLAttributes<HTMLDivElement> {}
+const ContainerNavbarStyled = styled(ContainerStyled)`
+    padding: 24px 16px;
 
-const Container = (props: ContainerProps) => {
+    @media(min-width: 768px) {
+        padding: 24px 16px;
+    }
+`;
+
+interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
+    isNavbar?: boolean
+}
+
+const Container = ({isNavbar = false, ...props}: ContainerProps) => {
     return (
         <Background>
-            <ContainerStyled {...props} />
+            {isNavbar ? (
+                <ContainerNavbarStyled as="header" {...props} />
+            ):(
+                <ContainerStyled {...props} />
+            )}
         </Background>
     );
 }

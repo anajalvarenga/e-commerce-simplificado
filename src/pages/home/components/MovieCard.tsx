@@ -22,7 +22,7 @@ const Image = styled.img`
 `;
 
 const Title = styled.h3`
-    font-family: Open Sans;
+    font-family: ${props => props.theme.fontFamily};
     font-size: 12px;
     line-height: 16.34px;
     font-weight: 700;
@@ -31,7 +31,7 @@ const Title = styled.h3`
 `;
 
 const Price = styled.b`
-    font-family: Open Sans;
+    font-family: ${props => props.theme.fontFamily};
     font-size: 16px;
     line-height: 21.79px;
     font-weight: 700;
