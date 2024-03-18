@@ -1,6 +1,6 @@
 const useTheme = () => {
     const theme = {
-        bgPrimary: '',
+        bgPrimary: '#2F2E41',
         bgSecondary: '#FFFFFF',
         radius: '4px',
     }

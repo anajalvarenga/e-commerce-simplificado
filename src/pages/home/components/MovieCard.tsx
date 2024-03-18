@@ -4,8 +4,6 @@ import { Product } from "../../../types/product";
 import { priceFormatter } from "../../../utils/price-formatter";
 
 const Container = styled.div`
-    max-width: 306.67px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;

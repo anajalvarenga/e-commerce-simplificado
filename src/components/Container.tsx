@@ -1,0 +1,29 @@
+import { HTMLAttributes } from "react";
+import styled from "styled-components";
+
+const Background = styled.div`
+    width: 100%;
+    background-color: ${props => props.theme.bgPrimary};
+`;
+
+const ContainerStyled = styled.main`
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px 40px 24px;
+
+    @media(min-width: 768px) {
+        padding: 0 16px 40px 16px;
+    }
+`;
+
+interface ContainerProps extends HTMLAttributes<HTMLDivElement> {}
+
+const Container = (props: ContainerProps) => {
+    return (
+        <Background>
+            <ContainerStyled {...props} />
+        </Background>
+    );
+}
+
+export default Container;
