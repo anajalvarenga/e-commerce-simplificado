@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import CartIcon from "../../../assets/icons/CartIcon";
+import Button from "../../../components/Button";
 import { Product } from "../../../types/product";
 import { priceFormatter } from "../../../utils/price-formatter";
 
@@ -39,12 +41,25 @@ const Price = styled.b`
     margin: 0;
 `;
 
+const CartInfoContainer = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 3.4px;
+`;
+
 const MovieCard = ({ movie }: { movie: Product }) => {
     return (
         <Container>
             <Image src={movie.image} />
             <Title>{movie.title}</Title>
             <Price>{priceFormatter(movie.price)}</Price>
+            <Button>
+                <CartInfoContainer>
+                    <CartIcon />
+                    <span>0</span>
+                </CartInfoContainer>
+                ADICIONAR AO CARRINHO
+            </Button>
         </Container>
     );
 }

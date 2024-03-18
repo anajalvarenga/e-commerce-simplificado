@@ -5,7 +5,9 @@ const useTheme = () => {
         bgSecondary: '#FFFFFF',
         radius: '4px',
         fontFamily: 'Open Sans',
-        lightGray: '#999999'
+        lightGray: '#999999',
+        btnPrimary: '#009EDD',
+        btnSecondary: '#039B00',
     }
 
     return theme;
