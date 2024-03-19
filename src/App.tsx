@@ -1,10 +1,10 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
+import AppRoutes from './app-routes';
 import Navbar from './components/Navbar';
+import Container from './components/Container';
 import { CartProvider } from './context/CartContext';
 import useTheme from './hooks/useTheme';
-import Home from './pages/home';
 
 function App() {
 	const theme = useTheme();
@@ -13,11 +13,9 @@ function App() {
 		<ThemeProvider theme={theme}>
 			<CartProvider>
 				<Navbar />
-				<BrowserRouter>
-					<Routes>
-						<Route path="/" element={<Home />} />
-					</Routes>
-				</BrowserRouter>
+				<Container>
+					<AppRoutes />
+				</Container>
 			</CartProvider>
 		</ThemeProvider>
 	);
