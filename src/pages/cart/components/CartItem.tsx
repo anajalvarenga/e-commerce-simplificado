@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Product from "./Product";
 import { Cart } from "../../../types/cart";
+import Quantity from "./Quantity";
 
 const CartItemContainer = styled.div`
     display: grid;
@@ -15,7 +16,7 @@ const CartItem = ({ item }: { item: Cart }) => {
                 title={item.title}
                 price={item.price}
             />
-            <span>teste</span>
+            <Quantity item={item} />
             <span>teste</span>
             <span>teste</span>
         </CartItemContainer>
