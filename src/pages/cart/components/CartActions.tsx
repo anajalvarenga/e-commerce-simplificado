@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import Button from "../../../components/Button";
+import LinkStyled from "../../../components/LinkStyled";
 import { useCartContext } from "../../../context/CartContext";
 import { priceFormatter } from "../../../utils/price-formatter";
 
@@ -57,7 +58,9 @@ const CartActions = () => {
 
     return (
         <CardActionsContainer>
-            <CartButton>Finalizar Pedido</CartButton>
+            <LinkStyled to="/compra-realizada">
+                <CartButton>Finalizar Pedido</CartButton>
+            </LinkStyled>
             <PriceContainer>
                 <PriceLabel>total</PriceLabel>
                 <Price>{priceFormatter(total)}</Price>
