@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
-import BagIcon from '../assets/icons/BagIcon';
 import Container from './Container';
+import BagIcon from '../assets/icons/BagIcon';
+import { useCartContext } from '../context/CartContext';
 
 const Title = styled.h1`
     font-family: ${props => props.theme.fontFamily};
@@ -53,6 +54,8 @@ const CartItems = styled.span`
 `;
 
 const Navbar = () => {
+    const { amount } = useCartContext();
+
     return (
         <Container isNavbar>
             <Content>
@@ -60,7 +63,7 @@ const Navbar = () => {
                 <CartContainer>
                     <CartContent>
                         <CartTitle>Meu Carrinho</CartTitle>
-                        <CartItems>0 itens</CartItems>
+                        <CartItems>{amount} itens</CartItems>
                     </CartContent>
                     <BagIcon />
                 </CartContainer>

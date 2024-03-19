@@ -1,7 +1,9 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import CartIcon from "../../../assets/icons/CartIcon";
 import Button from "../../../components/Button";
+import { useCartContext } from "../../../context/CartContext";
 import { Product } from "../../../types/product";
 import { priceFormatter } from "../../../utils/price-formatter";
 
@@ -48,15 +50,27 @@ const CartInfoContainer = styled.div`
 `;
 
 const MovieCard = ({ movie }: { movie: Product }) => {
+    const { getCartItem, addCartItem } = useCartContext();
+    const [item, setItem] = useState(getCartItem(movie.id));
+
+    useEffect(() => {
+        setItem(getCartItem(movie.id));
+    }, [movie.id, getCartItem]);
+
+    function addItemtoCart() {
+        const item = addCartItem(movie);
+        setItem(item)
+    }
+
     return (
         <Container>
             <Image src={movie.image} />
             <Title>{movie.title}</Title>
             <Price>{priceFormatter(movie.price)}</Price>
-            <Button>
+            <Button onClick={addItemtoCart} $secondary={!!item && item.amount > 0}>
                 <CartInfoContainer>
                     <CartIcon />
-                    <span>0</span>
+                    <span>{!!item ? item.amount : 0}</span>
                 </CartInfoContainer>
                 ADICIONAR AO CARRINHO
             </Button>
