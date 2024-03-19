@@ -1,4 +1,6 @@
 import MovieList from "./components/MovieList";
+import Empty from "../../components/Empty";
+import LoadingSpinner from "../../components/LoadingSpinner";
 import useFetch from "../../hooks/useFetch";
 
 const Home = () => {
@@ -6,8 +8,8 @@ const Home = () => {
 
     return (
         <>
-            {error && <p>{error}</p>}
-            {isPending && <p>Loading movies...</p>}
+            {error && <Empty action="reload" />}
+            {isPending && <LoadingSpinner />}
             {products && <MovieList movieList={products} />}
         </>
     );
