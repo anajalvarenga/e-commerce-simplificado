@@ -6,7 +6,7 @@ import { Product } from "../types/product";
 const useCart = () => {
     const [cart, setCart] = useState<Cart[]>([]);
     const [amount, setAmount] = useState<number>(0);
-    const [subtotal, setSubtotal] = useState<number>(0);
+    const [total, setTotal] = useState<number>(0);
 
     useEffect(() => {
         setCart(getCartItems());
@@ -14,7 +14,7 @@ const useCart = () => {
     
     useEffect(() => {
         setAmount(cart.reduce((acc, curr) => acc + curr.amount, 0));
-        setSubtotal(cart.reduce((acc, curr) => acc + (curr.amount * curr.price), 0));
+        setTotal(cart.reduce((acc, curr) => acc + (curr.amount * curr.price), 0));
     }, [cart]);
 
     function getCartItems(): Cart[] {
@@ -72,7 +72,7 @@ const useCart = () => {
 
     return {
         amount,
-        subtotal,
+        total,
         getCartItem,
         addCartItem,
         removeCartItem

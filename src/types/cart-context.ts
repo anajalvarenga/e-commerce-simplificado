@@ -3,7 +3,7 @@ import { Product } from "./product";
 
 export interface CartContextType {
     amount: number;
-    subtotal: number;
+    total: number;
     getCartItem: (id: number) => Cart | null;
     addCartItem: (product: Product) => Cart;
     removeCartItem: (id: number) => Cart[];
