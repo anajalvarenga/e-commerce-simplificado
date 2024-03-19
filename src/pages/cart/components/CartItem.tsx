@@ -1,7 +1,9 @@
 import styled from "styled-components";
+
 import Product from "./Product";
-import { Cart } from "../../../types/cart";
 import Quantity from "./Quantity";
+import TrashButton from "./TrashButton";
+import { Cart } from "../../../types/cart";
 import { priceFormatter } from "../../../utils/price-formatter";
 
 const CartItemContainer = styled.div`
@@ -28,7 +30,7 @@ const CartItem = ({ item }: { item: Cart }) => {
             />
             <Quantity item={item} />
             <SubTotal>{priceFormatter(item.price * item.amount)}</SubTotal>
-            <span>teste</span>
+            <TrashButton id={item.id} />
         </CartItemContainer>
     );
 }

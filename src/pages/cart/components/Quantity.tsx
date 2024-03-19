@@ -1,8 +1,10 @@
 import styled from "styled-components";
-import { useCartContext } from "../../../context/CartContext";
-import { Cart } from "../../../types/cart";
+
 import MinusIcon from "../../../assets/icons/MinusIcon";
 import PlusIcon from "../../../assets/icons/PlusIcon";
+import { ButtonIcon } from "../../../components/ButtonIcon";
+import { useCartContext } from "../../../context/CartContext";
+import { Cart } from "../../../types/cart";
 
 const Container = styled.div`
     display: flex;
@@ -30,13 +32,6 @@ const InputStyled = styled.input`
     &[type=number] {
     -moz-appearance: textfield;
     }
-`;
-
-const ButtonIcon = styled.button`
-    border: none;
-    padding: 0;
-    background-color: transparent;
-    cursor: pointer;
 `;
 
 const Quantity = ({ item }: { item: Cart }) => {

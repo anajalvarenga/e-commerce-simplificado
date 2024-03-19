@@ -69,6 +69,16 @@ const useCart = () => {
         }
     }
     
+    function removeAllCartItem(id: number): Cart[] {
+        const itemToRemove = getCartItem(id);
+        if (!itemToRemove) return cart;
+        
+        const updatedCart = cart.filter(item => item.id !== id);
+        setCart(updatedCart);
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+        return updatedCart;
+    }
+    
 
     return {
         cart,
@@ -76,7 +86,8 @@ const useCart = () => {
         total,
         getCartItem,
         addCartItem,
-        removeCartItem
+        removeCartItem,
+        removeAllCartItem
     };
 }
 
