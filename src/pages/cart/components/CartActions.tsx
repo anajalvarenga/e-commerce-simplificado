@@ -54,12 +54,14 @@ const Price = styled.b`
 `;
 
 const CartActions = () => {
-    const { total } = useCartContext();
+    const { total, clearCart } = useCartContext();
 
     return (
         <CardActionsContainer>
             <LinkStyled to="/compra-realizada">
-                <CartButton>Finalizar Pedido</CartButton>
+                <CartButton onClick={clearCart}>
+                    Finalizar Pedido
+                </CartButton>
             </LinkStyled>
             <PriceContainer>
                 <PriceLabel>total</PriceLabel>

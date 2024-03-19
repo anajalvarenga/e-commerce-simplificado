@@ -9,4 +9,5 @@ export interface CartContextType {
     addCartItem: (product: Product) => Cart;
     removeCartItem: (id: number) => Cart[];
     removeAllCartItem: (id: number) => Cart[];
+    clearCart: () => [];
 }

@@ -11,6 +11,7 @@ const initialContext: CartContextType = {
     addCartItem: (product: Product) => {return {...product, amount: 1}},
     removeCartItem: (id: number) => [],
     removeAllCartItem: (id: number) => [],
+    clearCart: () => []
 };
 
 const CartContext = createContext<CartContextType>(initialContext);

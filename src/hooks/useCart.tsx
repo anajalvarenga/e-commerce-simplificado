@@ -79,6 +79,12 @@ const useCart = () => {
         return updatedCart;
     }
     
+    function clearCart(): [] {
+        setCart([]);
+        localStorage.removeItem('cart');
+        return [];
+    }
+    
 
     return {
         cart,
@@ -87,7 +93,8 @@ const useCart = () => {
         getCartItem,
         addCartItem,
         removeCartItem,
-        removeAllCartItem
+        removeAllCartItem,
+        clearCart
     };
 }
 
