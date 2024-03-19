@@ -8,7 +8,11 @@ import { priceFormatter } from "../../../utils/price-formatter";
 
 const CartItemContainer = styled.div`
     display: grid;
-    grid-template-columns: 280px auto auto 24px;
+    grid-template-columns: 280px 180px auto 24px;
+
+    @media(min-width: 768px) {
+        grid-template-columns: 280px 348px auto 24px;
+    }
 `;
 
 const SubTotal = styled.p`

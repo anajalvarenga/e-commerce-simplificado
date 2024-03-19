@@ -1,5 +1,7 @@
 import styled from "styled-components";
+
 import CartActions from "./components/CartActions";
+import CartHeader from "./components/CartHeader";
 import CartItem from "./components/CartItem";
 import { useCartContext } from "../../context/CartContext";
 
@@ -28,8 +30,9 @@ const Cart = () => {
 
     return (
         <CardContainer>
+            <CartHeader />
             {cartItems && cartItems.map(item => (
-                <CartItem item={item} />
+                <CartItem key={item.id} item={item} />
             ))}
             <Line />
             <CartActions />
