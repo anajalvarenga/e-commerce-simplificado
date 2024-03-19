@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 import CartActions from "./components/CartActions";
 import Line from "../../components/Line";
-import { useCartContext } from "../../context/CartContext";
 import CartDesktop from "./components/CartDesktop.tsx";
 import CartMobile from "./components/CartMobile";
+import Empty from "../../components/Empty";
+import { useCartContext } from "../../context/CartContext";
 
 const CardContainer = styled.div`
     display: flex;
@@ -26,12 +27,18 @@ const Cart = () => {
     const { cart: cartItems } = useCartContext();
 
     return (
-        <CardContainer>
-            <CartDesktop cartItems={cartItems} />
-            <CartMobile cartItems={cartItems} />
-            <Line />
-            <CartActions />
-        </CardContainer>
+        <>  
+            {cartItems.length > 0 ? (
+                <CardContainer>
+                    <CartDesktop cartItems={cartItems} />
+                    <CartMobile cartItems={cartItems} />
+                    <Line />
+                    <CartActions />
+                </CardContainer>
+            ):(
+                <Empty action="goHome" />
+            )}
+        </>
     );
 }
 
