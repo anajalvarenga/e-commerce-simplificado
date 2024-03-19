@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 import CartActions from "./components/CartActions";
-import CartHeader from "./components/CartHeader";
-import CartItem from "./components/CartItem";
+import Line from "../../components/Line";
 import { useCartContext } from "../../context/CartContext";
+import CartDesktop from "./components/CartDesktop.tsx";
+import CartMobile from "./components/CartMobile";
 
 const CardContainer = styled.div`
     display: flex;
@@ -17,12 +18,8 @@ const CardContainer = styled.div`
 
     @media(min-width: 768px) {
         gap: 24px;
+        padding: 24px;
     }
-`;
-
-const Line = styled.hr`
-    width: 100%;
-    background-color: #999999;
 `;
 
 const Cart = () => {
@@ -30,10 +27,8 @@ const Cart = () => {
 
     return (
         <CardContainer>
-            <CartHeader />
-            {cartItems && cartItems.map(item => (
-                <CartItem key={item.id} item={item} />
-            ))}
+            <CartDesktop cartItems={cartItems} />
+            <CartMobile cartItems={cartItems} />
             <Line />
             <CartActions />
         </CardContainer>

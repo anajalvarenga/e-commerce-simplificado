@@ -3,6 +3,7 @@ import styled from "styled-components";
 const CartHeaderContainer = styled.div`
     display: grid;
     grid-template-columns: 280px 180px auto 24px;
+    margin-bottom: 24px;
 
     @media(min-width: 768px) {
         grid-template-columns: 280px 348px auto 24px;
@@ -25,7 +26,6 @@ const CartHeader = () => {
             <ColumnName>Produto</ColumnName>
             <ColumnName>Qtd</ColumnName>
             <ColumnName>Subtotal</ColumnName>
-            {/* <ColumnName>a</ColumnName> */}
         </CartHeaderContainer>
     );
 }

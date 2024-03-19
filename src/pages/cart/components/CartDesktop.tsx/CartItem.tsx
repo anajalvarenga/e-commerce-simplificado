@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
-import Product from "./Product";
-import Quantity from "./Quantity";
-import TrashButton from "./TrashButton";
-import { Cart } from "../../../types/cart";
-import { priceFormatter } from "../../../utils/price-formatter";
+import Product from "../Product";
+import Quantity from "../Quantity";
+import TrashButton from "../TrashButton";
+import { Cart } from "../../../../types/cart";
+import { priceFormatter } from "../../../../utils/price-formatter";
 
 const CartItemContainer = styled.div`
     display: grid;
     grid-template-columns: 280px 180px auto 24px;
+    margin-bottom: 24px;
 
     @media(min-width: 768px) {
         grid-template-columns: 280px 348px auto 24px;

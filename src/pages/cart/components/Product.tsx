@@ -1,15 +1,12 @@
 import styled from "styled-components";
+
+import ProductImage from "./ProductImage";
 import { priceFormatter } from "../../../utils/price-formatter";
 
 const Container = styled.div`
     display: flex;
     align-items: center;
     gap: 16px;
-`;
-
-const Image = styled.img`
-    width: 91px;
-    height: 114px;
 `;
 
 const Description = styled.div`
@@ -45,7 +42,7 @@ interface ProductProps {
 const Product = ({ img, title, price }: ProductProps) => {
     return (
         <Container>
-            <Image src={img} alt={title} />
+            <ProductImage src={img} alt={title} />
             <Description>
                 <Title>{title}</Title>
                 <Price>{priceFormatter(price)}</Price>
