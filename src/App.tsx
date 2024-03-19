@@ -1,3 +1,4 @@
+import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
 import AppRoutes from './app-routes';
@@ -12,10 +13,12 @@ function App() {
 	return (
 		<ThemeProvider theme={theme}>
 			<CartProvider>
-				<Navbar />
-				<Container>
-					<AppRoutes />
-				</Container>
+				<BrowserRouter>
+					<Navbar />
+					<Container>
+						<AppRoutes />
+					</Container>
+				</BrowserRouter>
 			</CartProvider>
 		</ThemeProvider>
 	);

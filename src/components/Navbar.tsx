@@ -1,8 +1,13 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Container from './Container';
 import BagIcon from '../assets/icons/BagIcon';
 import { useCartContext } from '../context/CartContext';
+
+const LinkStyled = styled(Link)`
+    text-decoration: none;
+`;
 
 const Title = styled.h1`
     font-family: ${props => props.theme.fontFamily};
@@ -59,13 +64,17 @@ const Navbar = () => {
     return (
         <Container isNavbar>
             <Content>
-                <Title>WeMovies</Title>
+                <LinkStyled to="/">
+                    <Title>WeMovies</Title>
+                </LinkStyled>
                 <CartContainer>
                     <CartContent>
                         <CartTitle>Meu Carrinho</CartTitle>
                         <CartItems>{amount} itens</CartItems>
                     </CartContent>
-                    <BagIcon />
+                    <LinkStyled to="/carrinho/">
+                        <BagIcon />
+                    </LinkStyled>
                 </CartContainer>
             </Content>
         </Container>
