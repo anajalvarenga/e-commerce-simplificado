@@ -1,5 +1,6 @@
 import { ReactNode, createContext, useContext } from "react";
-import useCart from "../hooks/useCart"; // Importe o hook useCart
+
+import useCart from "../hooks/useCart";
 import { CartContextType } from "../types/cart-context";
 import { Product } from "../types/product";
 
