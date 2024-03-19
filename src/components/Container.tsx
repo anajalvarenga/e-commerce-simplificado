@@ -8,6 +8,7 @@ const Background = styled.div`
 
 const ContainerStyled = styled.main`
     max-width: 1080px;
+    min-height: calc(100vh - 128px);
     margin: 0 auto;
     padding: 0 24px 40px 24px;
 
@@ -17,6 +18,7 @@ const ContainerStyled = styled.main`
 `;
 
 const ContainerNavbarStyled = styled(ContainerStyled)`
+    min-height: inherit;
     padding: 24px 16px;
 
     @media(min-width: 768px) {
