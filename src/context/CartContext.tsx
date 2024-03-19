@@ -4,6 +4,7 @@ import { CartContextType } from "../types/cart-context";
 import { Product } from "../types/product";
 
 const initialContext: CartContextType = {
+    cart: [],
     amount: 0,
     total: 0,
     getCartItem: (id: number) => null,

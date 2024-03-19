@@ -2,6 +2,7 @@ import { Cart } from "./cart";
 import { Product } from "./product";
 
 export interface CartContextType {
+    cart: Cart[];
     amount: number;
     total: number;
     getCartItem: (id: number) => Cart | null;

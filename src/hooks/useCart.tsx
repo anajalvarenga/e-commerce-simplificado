@@ -71,6 +71,7 @@ const useCart = () => {
     
 
     return {
+        cart,
         amount,
         total,
         getCartItem,
